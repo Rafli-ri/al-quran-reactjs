@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { SurahDetail } from "../../store/quran-context";
+import HeaderDetail from "../HeaderDetail";
+import AudioPlayer from "../AudioPlayer";
 
 interface SurahDetailProps {
   surahDetail: SurahDetail | null;
 }
 
 const ItemsDetailSurat: React.FC<SurahDetailProps> = ({ surahDetail }) => {
+  const [showAudio, setShowAudio] = useState(false);
   return (
     <>
       {surahDetail && (
-        <div className="flex flex-col justify-center items-center">
-          <h2>{surahDetail.tempatTurun}</h2>
+        <div className="flex flex-col justify-center items-center ">
+          {/* <h2>{surahDetail.tempatTurun}</h2> */}
+          <HeaderDetail onShow={() => setShowAudio(!showAudio)} />
           {surahDetail.ayat?.map(
             ({ teksArab, nomorAyat, teksLatin, teksIndonesia }: any) => {
               return (
-                <div className="py-2 w-11/12 sm:w-3/4">
+                <div className="py-2 w-11/12 sm:w-3/4" key={nomorAyat}>
                   <div className="bg-white p-7 shadow-sm rounded-md border ">
                     <div className="text-right text-slate-800  font-medium text-[24px] sm:text-[30px] font-katibeh mt-4">
                       {teksArab}{" "}
@@ -33,6 +37,9 @@ const ItemsDetailSurat: React.FC<SurahDetailProps> = ({ surahDetail }) => {
                 </div>
               );
             }
+          )}
+          {showAudio && (
+            <AudioPlayer audioSrc={surahDetail.audioFull?.["01"]} />
           )}
         </div>
       )}

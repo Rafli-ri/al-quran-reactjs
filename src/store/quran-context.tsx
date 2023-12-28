@@ -28,6 +28,7 @@ export interface SurahDetail {
   teksLatin: string;
   ayat: string[];
   teksIndonesia: string;
+  audioFull: any;
 }
 
 interface State {

@@ -35,32 +35,12 @@ const Search: React.FC = () => {
           <input
             type="text"
             id="voice-search"
-            className="border-slate-400 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2 sm:px-10 sm:p-4 bg-[#f4f4f4] placeholder-gray-400 text-slate-700 "
-            placeholder="Search..."
+            className="border-slate-400 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2 sm:px-10 sm:p-4 bg-[#f4f4f4] placeholder-gray-400 text-slate-500 font-medium"
+            placeholder="Search surah (ex: al-fatihah)...."
             required
             defaultValue={quranState.searchSurah}
             onChange={searchChangeHandler}
           />
-          <button
-            type="button"
-            className="absolute inset-y-0 end-0 flex items-center pe-3"
-          >
-            <svg
-              className="w-4 h-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 "
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 16 20"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M15 7v3a5.006 5.006 0 0 1-5 5H6a5.006 5.006 0 0 1-5-5V7m7 9v3m-3 0h6M7 1h2a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3Z"
-              />
-            </svg>
-          </button>
         </div>
       </form>
     </div>
