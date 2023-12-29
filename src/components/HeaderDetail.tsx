@@ -54,7 +54,7 @@ const HeaderDetail: React.FC<{ onShow: () => void }> = ({ onShow }) => {
         <div className="bg-white p-7 rounded-md border flex justify-between items-center shadow-[0_20px_15px_-20px_rgba(68,68,68,0.3)] mb-4 transform transition-transform ease-out duration-300 animate-fadeIn">
           <Link
             to={`/surat/${prevSurahNomor}`}
-            className="text-[12px] sm:text-[18px]"
+            className="text-[9px] sm:text-[18px]"
           >
             {prevNamaLatin}
           </Link>
@@ -68,7 +68,7 @@ const HeaderDetail: React.FC<{ onShow: () => void }> = ({ onShow }) => {
 
           <Link
             to={`/surat/${nextSurahNomor}`}
-            className="text-[12px] sm:text-[18px]"
+            className="text-[9px] sm:text-[18px]"
           >
             {nextNamaLatin}
           </Link>

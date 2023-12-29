@@ -35,7 +35,7 @@ const Search: React.FC = () => {
           <input
             type="text"
             id="voice-search"
-            className="border-slate-400 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2 sm:px-10 sm:p-4 bg-[#f4f4f4] placeholder-gray-400 text-slate-500 font-medium"
+            className="border-slate-400 text-[10px] sm:text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2 sm:px-10 sm:p-4 bg-[#f4f4f4] placeholder-gray-400 text-slate-500 font-medium"
             placeholder="Search surah (ex: al-fatihah)...."
             required
             defaultValue={quranState.searchSurah}

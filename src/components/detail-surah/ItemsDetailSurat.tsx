@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { SurahDetail } from "../../store/quran-context";
+import { BiPlayCircle } from "react-icons/bi";
+import { BiDetail } from "react-icons/bi";
 import HeaderDetail from "../HeaderDetail";
 import AudioPlayer from "../AudioPlayer";
-
+import Footer from "../Footer";
 interface SurahDetailProps {
   surahDetail: SurahDetail | null;
 }
@@ -30,9 +32,20 @@ const ItemsDetailSurat: React.FC<SurahDetailProps> = ({ surahDetail }) => {
                       {teksLatin}
                     </div>
                     <div className="my-4 text-[14px] sm:text-[16px] font-semibold text-slate-600 divide-black">
-                      {teksIndonesia}
+                      <p>
+                        {nomorAyat}
+                        {". "} <span>{teksIndonesia}</span>
+                      </p>
                     </div>
                     <hr className="my-3 h-0.5 border-t-0 bg-neutral-200 opacity-100" />
+                    <div className="flex text-2xl text-slate-600 ">
+                      <BiPlayCircle className="mr-3 hover:text-slate-900 hover:cursor-pointer" />
+                      <BiDetail
+                        className="mr-3 hover:text-slate-900 hover:cursor-pointer transition duration-150 ease-in-out transititext-primary text-primary"
+                        data-te-toggle="tooltip"
+                        title="Tafsir ayat"
+                      />
+                    </div>
                   </div>
                 </div>
               );
@@ -43,6 +56,7 @@ const ItemsDetailSurat: React.FC<SurahDetailProps> = ({ surahDetail }) => {
           )}
         </div>
       )}
+      <Footer className={"sticky sm:static"} />
     </>
   );
 };

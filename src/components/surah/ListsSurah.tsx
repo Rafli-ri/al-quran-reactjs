@@ -4,6 +4,7 @@ import { useAlquran } from "../../store/quran-context";
 import ItemsSurah from "./ItemsSurah";
 import Loading from "../Loading";
 import Error from "../Error";
+import Footer from "../Footer";
 
 const ListsSurah: React.FC = () => {
   const { quranState }: any = useAlquran();
@@ -31,8 +32,9 @@ const ListsSurah: React.FC = () => {
   return (
     <>
       <div className="m-4">
-        <div className="flex flex-wrap">{surahRender()}</div>
+        <div className="flex flex-wrap mb-28 sm:mb-0">{surahRender()}</div>
       </div>
+      <Footer className={"fixed sm:static"} />
     </>
   );
 };
